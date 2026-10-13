@@ -1,0 +1,149 @@
+
+.claim-input-card {
+  min-width: 0;
+  padding: 22px;
+  background: #111827;
+  border: 1px solid #273146;
+  border-radius: 18px;
+}
+
+.claim-input-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+
+.claim-input-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: #c4b5fd;
+  place-items: center;
+  background: #251b42;
+  border: 1px solid #40335d;
+  border-radius: 12px;
+}
+
+.claim-input-heading h2 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.claim-input-heading p {
+  margin: 5px 0 0;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.claim-input-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.claim-input-label span {
+  padding: 4px 7px;
+  color: #94a3b8;
+  background: #1b2333;
+  border: 1px solid #30384c;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.claim-input-textarea {
+  display: block;
+  width: 100%;
+  min-height: 115px;
+  padding: 13px 14px;
+  resize: vertical;
+  color: #f1f5f9;
+  background: #0b1220;
+  border: 1px solid #30384c;
+  border-radius: 11px;
+  outline: none;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.8;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.claim-input-textarea::placeholder {
+  color: #64748b;
+}
+
+.claim-input-textarea:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgb(139 92 246 / 12%);
+}
+
+.claim-input-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.claim-input-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.claim-input-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.claim-input-hint svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #a78bfa;
+}
+
+.claim-input-counter {
+  flex-shrink: 0;
+  color: #64748b;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .claim-input-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .claim-input-heading {
+    align-items: flex-start;
+  }
+
+  .claim-input-footer {
+    flex-direction: column;
+  }
+
+  .claim-input-counter {
+    align-self: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claim-input-textarea {
+    transition: none;
+  }
+}

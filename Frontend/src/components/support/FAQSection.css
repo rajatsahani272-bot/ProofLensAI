@@ -1,0 +1,152 @@
+
+.faq-search {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 47px;
+  margin-bottom: 30px;
+  padding: 0 15px;
+  border: 1px solid var(--help-border);
+  border-radius: 10px;
+  background: var(--help-panel);
+}
+
+.faq-search > svg {
+  flex-shrink: 0;
+  color: var(--help-muted);
+}
+
+.faq-search input {
+  flex: 1;
+  min-width: 0;
+  color: var(--help-text);
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+}
+
+.faq-search input::placeholder {
+  color: #748096;
+}
+
+.faq-search button,
+.faq-empty button {
+  padding: 7px 10px;
+  color: #b6b6ff;
+  border: none;
+  border-radius: 6px;
+  background: rgba(139, 140, 255, 0.09);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.faq-category {
+  margin-top: 26px;
+}
+
+.faq-category > h3 {
+  margin: 0 0 12px;
+  color: #a8b2c5;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.faq-item {
+  overflow: hidden;
+  border: 1px solid var(--help-border);
+  border-radius: 12px;
+  background: var(--help-panel);
+  transition: border-color 0.2s ease;
+}
+
+.faq-item.is-open {
+  border-color: rgba(139, 140, 255, 0.34);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  min-height: 58px;
+  padding: 17px 20px;
+  color: #e6ebf5;
+  text-align: left;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  color: #c4c4ff;
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: #9b9bff;
+  transition: transform 0.2s ease;
+}
+
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 20px 19px;
+  animation: faq-fade-in 0.2s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: var(--help-muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.faq-empty {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 42px 20px;
+  text-align: center;
+  border: 1px dashed var(--help-border);
+  border-radius: 14px;
+  background: var(--help-panel);
+}
+
+.faq-empty > svg {
+  color: #a4a4ff;
+}
+
+.faq-empty h3 {
+  margin: 13px 0 5px;
+  font-size: 15px;
+}
+
+.faq-empty p {
+  margin: 0 0 18px;
+  color: var(--help-muted);
+  font-size: 12px;
+}
+
+@keyframes faq-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

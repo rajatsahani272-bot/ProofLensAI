@@ -1,0 +1,179 @@
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 76px;
+  padding: 14px 34px;
+  background: rgb(11 14 23 / 88%);
+  border-bottom: 1px solid #202637;
+  backdrop-filter: blur(18px);
+}
+
+.header-breadcrumb,
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-breadcrumb {
+  gap: 11px;
+  min-width: 0;
+}
+
+.header-root {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.header-breadcrumb > svg {
+  color: #475569;
+}
+
+.header-breadcrumb h1 {
+  overflow: hidden;
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 15px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header-actions {
+  gap: 14px;
+}
+
+.header-ai-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  color: #a7f3d0;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgb(16 185 129 / 8%);
+  border: 1px solid rgb(16 185 129 / 18%);
+  border-radius: 9px;
+}
+
+.status-dot,
+.notification-dot {
+  width: 7px;
+  height: 7px;
+  background: #34d399;
+  border-radius: 50%;
+}
+
+.status-dot {
+  box-shadow: 0 0 9px rgb(52 211 153 / 45%);
+}
+
+.header-icon-button {
+  position: relative;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  color: #94a3b8;
+  place-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header-icon-button:hover {
+  color: #f8fafc;
+  background: #171d2c;
+  border-color: #2a3448;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 6px;
+  height: 6px;
+  background: #a78bfa;
+  border: 1px solid #0b0e17;
+}
+
+.header-divider {
+  width: 1px;
+  height: 32px;
+  background: #293144;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-avatar {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  color: #c4b5fd;
+  place-items: center;
+  background: linear-gradient(135deg, #35245b, #20284a);
+  border: 1px solid #4c3973;
+  border-radius: 12px;
+}
+
+.header-profile-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-profile-name {
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.header-profile-role {
+  color: #64748b;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .app-header {
+    padding-inline: 22px;
+  }
+
+  .header-profile-copy,
+  .header-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    min-height: 66px;
+    padding: 12px 14px;
+  }
+
+  .header-root,
+  .header-breadcrumb > svg,
+  .header-ai-status,
+  .header-actions > .header-icon-button:first-of-type {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .header-breadcrumb h1 {
+    font-size: 14px;
+  }
+}

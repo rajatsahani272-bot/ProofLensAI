@@ -1,0 +1,143 @@
+
+.history-page {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.history-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.history-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.4px;
+}
+
+.history-page-header h1 {
+  margin: 12px 0 8px;
+  color: #f8fafc;
+  font-size: clamp(28px, 3vw, 36px);
+  letter-spacing: -1px;
+}
+
+.history-page-header p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.history-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  color: #94a3b8;
+  background: #0b1220;
+  border: 1px solid #30384c;
+  border-radius: 11px;
+}
+
+.history-search:focus-within {
+  border-color: #8b5cf6;
+}
+
+.history-search input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  color: #f1f5f9;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 12px;
+}
+
+.history-search input::placeholder {
+  color: #64748b;
+}
+
+.history-empty {
+  display: flex;
+  min-height: 310px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.history-empty-icon {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 17px;
+  color: #c4b5fd;
+  place-items: center;
+  background: #251b42;
+  border: 1px solid #40335d;
+  border-radius: 19px;
+}
+
+.history-empty h2 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 18px;
+}
+
+.history-empty > p {
+  max-width: 440px;
+  margin: 10px 0 20px;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.history-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 16px;
+  background: rgb(139 92 246 / 6%);
+  border: 1px solid rgb(139 92 246 / 18%);
+  border-radius: 13px;
+}
+
+.history-info svg {
+  flex-shrink: 0;
+  color: #a78bfa;
+}
+
+.history-info p {
+  margin: 0;
+  color: #aab6c8;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .history-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .history-page-header > .btn {
+    width: 100%;
+  }
+
+  .history-empty {
+    min-height: 270px;
+    padding: 25px 8px;
+  }
+}

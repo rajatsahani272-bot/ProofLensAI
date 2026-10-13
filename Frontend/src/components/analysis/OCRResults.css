@@ -1,0 +1,164 @@
+
+.ocr-results {
+  min-width: 0;
+  padding: 22px;
+  background: #111827;
+  border: 1px solid #273146;
+  border-radius: 18px;
+}
+
+.ocr-results-header,
+.ocr-results-title {
+  display: flex;
+  align-items: center;
+}
+
+.ocr-results-header {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ocr-results-title {
+  min-width: 0;
+  gap: 11px;
+}
+
+.ocr-results-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  color: #c4b5fd;
+  place-items: center;
+  background: #251b42;
+  border-radius: 11px;
+}
+
+.ocr-results-title h2 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 15px;
+}
+
+.ocr-results-title p {
+  margin: 5px 0 0;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.ocr-copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 10px;
+  color: #c4b5fd;
+  background: #1b2031;
+  border: 1px solid #363d53;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.ocr-copy-button:hover:not(:disabled) {
+  background: #29243e;
+}
+
+.ocr-copy-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ocr-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+  padding: 0 12px;
+  color: #94a3b8;
+  background: #0b1220;
+  border: 1px solid #30384c;
+  border-radius: 10px;
+}
+
+.ocr-search input {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  color: #f1f5f9;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 12px;
+}
+
+.ocr-search:focus-within {
+  border-color: #8b5cf6;
+}
+
+.ocr-search input::placeholder {
+  color: #64748b;
+}
+
+.ocr-results-list {
+  display: flex;
+  max-height: 360px;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 15px;
+  overflow-y: auto;
+}
+
+.ocr-result-entry {
+  padding: 12px;
+  background: #0d1422;
+  border: 1px solid #252f42;
+  border-radius: 10px;
+}
+
+.ocr-result-entry p {
+  margin: 0;
+  color: #dbe4f0;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.ocr-confidence {
+  display: inline-block;
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.ocr-empty {
+  padding: 25px 12px;
+  color: #94a3b8;
+  text-align: center;
+  font-size: 12px;
+}
+
+.ocr-disclaimer {
+  margin: 15px 0 0;
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+@media (max-width: 480px) {
+  .ocr-results {
+    padding: 15px;
+  }
+
+  .ocr-results-header {
+    align-items: flex-start;
+  }
+
+  .ocr-copy-button {
+    padding: 0 8px;
+  }
+}
