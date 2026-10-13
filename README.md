@@ -346,7 +346,7 @@ Our goal is to support informed investigation, not replace critical thinking.
 | Detail | Information |
 |---|---|
 | **Project** | ProofLens AI |
-| **Team** | AegisAI |
+| **Team** | ReactDev |
 | **Track** | Open Innovation |
 | **Focus** | AI-Powered Image & Claim Verification |
 | **Tagline** | Verify Images. Verify Claims. See the Truth with Evidence. |
