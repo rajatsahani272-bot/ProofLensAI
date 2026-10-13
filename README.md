@@ -1,222 +1,400 @@
-# ProofLens AI
 
-**Verify Images. Verify Claims. See the Truth with Evidence.**
+<div align="center">
 
-ProofLens AI is an AI-assisted image and claim verification platform
-designed to help users inspect suspicious images, extract visible text,
-analyze image signals, and review claims against available evidence.
+# 🔎 ProofLens AI
 
-> **Important:** ProofLens AI provides decision support, not a
-> definitive verdict. AI-generated-image detection can be uncertain, OCR
-> can make mistakes, and claim results depend on the quality and
-> reliability of available evidence.
+### Verify Images. Verify Claims. See the Truth with Evidence.
 
-## The Problem
+**An AI-powered platform for image analysis, text extraction, and evidence-aware claim verification.**
 
-Images and claims can spread online without enough context. People may
-struggle to determine what an image contains, what text it shows, or
-whether a related statement is supported by credible evidence.
+<br/>
 
-## Our Solution
+![AI](https://img.shields.io/badge/AI-Powered-8B5CF6?style=for-the-badge)
+![React](https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-AI%2FML-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-ProofLens AI combines image processing, OCR, AI-assisted analysis, and
-claim verification in one workflow. It presents analysis outputs to help
-users investigate content rather than relying on a single unexplained
-score.
+<br/>
 
-## Key Features
+**Built by Team AegisAI**
 
--   **Image analysis:** Submit an image for analysis through the web
-    interface.
--   **OCR text extraction:** Extract text detected inside an uploaded
-    image.
--   **AI-image detection signals:** Estimate whether an image may
-    contain AI-generated content. This is experimental and is not proof.
--   **Claim verification:** Evaluate a user-provided claim and summarize
-    whether available evidence supports it.
--   **Evidence-aware results:** Present analysis output and context for
-    further investigation.
--   **Web dashboard:** Review the verification workflow through a
-    React-based interface.
+*Open Innovation — AI-Powered Image & Claim Verification*
 
-## How It Works
+</div>
 
-1.  **Upload:** The user submits an image and, where applicable, a claim
-    to check.
-2.  **Process:** The backend receives the request and coordinates the
-    analysis workflow.
-3.  **Extract:** The OCR engine attempts to identify text present in the
-    image.
-4.  **Analyze:** Image-analysis and AI-assisted components produce
-    signals and a claim assessment.
-5.  **Review:** The result is returned to the web interface for the user
-    to inspect.
+---
 
-## Technology Stack
+## 🌐 Overview
 
-  Layer                     Technologies
-  ------------------------- ----------------------------------------------------
-  Frontend                  React, Vite, JavaScript, CSS
-  Backend API               Node.js, Express, ES Modules
-  AI service                Python, FastAPI
-  Image and text analysis   Python image-processing and OCR pipeline
-  Claim analysis            AI-assisted claim verification and evidence review
-  Database                  MongoDB Atlas
-  AI integration            Groq-based analysis components
+**ProofLens AI** is an AI-assisted image and claim verification platform that helps users investigate suspicious visual content through image processing, Optical Character Recognition (OCR), AI-generated-image detection signals, and claim-focused evidence analysis.
 
-## Architecture
+Instead of relying on a single verdict, ProofLens AI brings multiple analysis signals into one workflow to help users understand the content and investigate the available evidence.
 
-``` text
-React + Vite Frontend
-        |
-        v
-Node.js + Express API
-        |
-        +------> MongoDB Atlas
-        |
-        v
-Python FastAPI AI Service
-        |
-        v
-AIML Pipeline
-  ├── Image Processing
-  ├── OCR
-  ├── AI-Image Detection Signals
-  └── Claim Verification
-        |
-        v
-Analysis Result -> Frontend
+> 💡 **Our vision:** Make digital-content verification more accessible, transparent, and evidence-aware.
+
+---
+
+## 🚨 The Problem
+
+In today's digital world, images and claims can circulate without sufficient context or reliable supporting evidence.
+
+- 🖼️ **Uncertain image authenticity:** Users may struggle to assess whether an image could be AI-generated or manipulated.
+- 🔤 **Hidden information:** Important text embedded in images can be difficult to extract and review.
+- 🔍 **Unverified claims:** Statements may circulate without clear supporting evidence.
+- ⚠️ **Fragmented investigation:** Users often need different tools to inspect images, extract text, and investigate claims.
+
+## 💡 Our Solution
+
+ProofLens AI combines these capabilities into a unified investigation workflow.
+
+| Challenge | ProofLens AI Approach |
+|---|---|
+| Inspect an image | Image processing and AI-assisted analysis |
+| Extract embedded text | OCR-based text extraction |
+| Assess possible AI generation | Experimental AI-image detection signals |
+| Investigate a claim | Evidence-aware claim analysis |
+| Understand the outcome | Consolidated analysis results |
+
+---
+
+## ✨ Key Features
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🖼️ Image Analysis
+
+Process submitted images and generate analysis outputs to support further investigation.
+
+</td>
+<td width="50%" valign="top">
+
+### 🔤 OCR Text Extraction
+
+Extract text detected inside uploaded images for inspection and analysis.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🤖 AI-Image Detection
+
+Generate experimental signals that may help assess whether an image contains AI-generated content.
+
+</td>
+<td width="50%" valign="top">
+
+### 🔎 Claim Verification
+
+Analyze user-provided claims against available evidence and summarize the assessment.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 📊 Unified Dashboard
+
+Access the image-analysis and verification workflow through a React-based interface.
+
+</td>
+<td width="50%" valign="top">
+
+### 🧩 Modular Architecture
+
+Separate the frontend, backend API, Python AI service, and analysis pipeline.
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🏗️ System Architecture
+
+The application separates user interaction, API orchestration, AI processing, and data persistence into distinct layers.
+
+```mermaid
+flowchart TB
+    U(["👤 User"])
+
+    subgraph FRONTEND["Frontend Layer"]
+        UI["React + Vite Dashboard"]
+        UP["Image Upload & Claim Input"]
+        RESULT["Verification Results"]
+        UI --> UP
+        RESULT --> UI
+    end
+
+    subgraph BACKEND["Backend Layer"]
+        API["Node.js + Express API"]
+        DB[("MongoDB Atlas")]
+    end
+
+    subgraph AI["AI Processing Layer"]
+        SERVICE["Python FastAPI Service"]
+        PIPELINE["AIML Pipeline"]
+        OCR["OCR Engine"]
+        IMG["Image Processing"]
+        DETECT["AI-Image Detection"]
+        CLAIM["Claim Verification"]
+    end
+
+    U --> UI
+    UP --> API
+    API <--> DB
+    API --> SERVICE
+    SERVICE --> PIPELINE
+    PIPELINE --> OCR
+    PIPELINE --> IMG
+    PIPELINE --> DETECT
+    PIPELINE --> CLAIM
+    OCR --> PIPELINE
+    IMG --> PIPELINE
+    DETECT --> PIPELINE
+    CLAIM --> PIPELINE
+    PIPELINE --> SERVICE
+    SERVICE --> API
+    API --> RESULT
+
+    classDef frontend fill:#172554,stroke:#60A5FA,color:#FFFFFF
+    classDef backend fill:#14532D,stroke:#4ADE80,color:#FFFFFF
+    classDef ai fill:#581C87,stroke:#C084FC,color:#FFFFFF
+    classDef database fill:#713F12,stroke:#FACC15,color:#FFFFFF
+
+    class UI,UP,RESULT frontend
+    class API backend
+    class SERVICE,PIPELINE,OCR,IMG,DETECT,CLAIM ai
+    class DB database
 ```
 
-## Repository Structure
+### 🔄 Verification Workflow
 
-``` text
+```mermaid
+flowchart TD
+    A([Start]) --> B["Upload Image"]
+    B --> C["Submit Analysis Request"]
+    C --> D["Backend API"]
+    D --> E["Image Processing"]
+    E --> F["OCR Text Extraction"]
+    E --> G["AI-Image Detection Signals"]
+    F --> H["Combine Analysis Outputs"]
+    G --> H
+    H --> I["Claim Analysis, If Applicable"]
+    I --> J["Return Results"]
+    J --> K["User Reviews Findings and Evidence"]
+    K --> L([End])
+
+    style A fill:#166534,color:#FFFFFF
+    style L fill:#166534,color:#FFFFFF
+    style D fill:#1D4ED8,color:#FFFFFF
+    style H fill:#6B21A8,color:#FFFFFF
+    style K fill:#92400E,color:#FFFFFF
+```
+
+*Note: The diagrams illustrate the intended high-level architecture and workflow. Exact execution order and optional processing steps depend on the implementation.*
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| Frontend | React + Vite | Interactive web interface |
+| Styling | CSS | UI layout and visual design |
+| Backend | Node.js + Express | API and request orchestration |
+| AI Service | Python + FastAPI | AI-processing service interface |
+| Image Processing | Python | Image analysis pipeline |
+| OCR | OCR engine | Extract text from images |
+| AI Analysis | Groq integration | AI-assisted analysis |
+| Database | MongoDB Atlas | Application data persistence |
+
+---
+
+## 📂 Project Structure
+
+```text
 ProofLensAI/
-├── AIML/         # Image analysis, OCR, detection and claim-verification logic
-├── Backend/      # Express API and application backend
-├── Frontend/     # React + Vite user interface
-├── ai-service/   # FastAPI adapter for AI/ML processing
-└── .gitignore
+│
+├── AIML/
+│   ├── ai_detector.py
+│   ├── claim_verifier.py
+│   ├── groq_analyzer.py
+│   ├── image_processing.py
+│   ├── ocr_engine.py
+│   └── pipeline.py
+│
+├── Backend/
+│   └── Express API and backend modules
+│
+├── Frontend/
+│   └── React + Vite application
+│
+├── ai-service/
+│   └── FastAPI AI service
+│
+├── .gitignore
+└── README.md
 ```
 
-## Getting Started
+*The tree highlights selected source files. Individual folders may contain additional modules, configuration files, tests, and assets.*
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
--   Node.js and npm
--   Python 3
--   MongoDB Atlas account or a compatible MongoDB deployment
--   API credentials required by enabled AI integrations
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- [Python](https://www.python.org/)
+- [Git](https://git-scm.com/)
+- MongoDB Atlas access or a compatible MongoDB deployment
+- Credentials for the AI integrations enabled in your environment
 
 ### 1. Clone the repository
 
-``` bash
+```bash
 git clone https://github.com/rajatsahani272-bot/ProofLensAI.git
 cd ProofLensAI
 ```
 
 ### 2. Configure environment variables
 
-Create local `.env` files in the relevant service directories using the
-variable names expected by each service. Do not commit real secrets.
+Create local `.env` files in the relevant directories according to the variables expected by each service.
 
 Configuration may include:
 
--   MongoDB connection URI
--   API port and service URLs
--   Frontend origin for CORS
--   AI provider API key
--   Frontend API base URL
+- MongoDB connection URI
+- AI provider API key
+- Backend port
+- AI service URL
+- Frontend API base URL
+- Allowed frontend origin for CORS
 
-Check each service's configuration code for the exact variable names
-before setting them.
+**Security:** Never commit real API keys, database credentials, or `.env` files.
 
-### 3. Install dependencies
+### 3. Install frontend dependencies
 
-Install frontend and backend dependencies in separate terminals:
-
-``` bash
+```bash
 cd Frontend
 npm install
 ```
 
-``` bash
+Start the frontend using the script configured in `Frontend/package.json`.
+
+### 4. Install backend dependencies
+
+Open another terminal:
+
+```bash
 cd Backend
 npm install
 ```
 
-Set up Python environments and install the dependencies required by
-`AIML/` and `ai-service/` using the dependency files available in those
-directories.
+Configure the environment and start the backend using the script configured in `Backend/package.json`.
 
-### 4. Run the services
+### 5. Set up the Python services
 
-Start each service in a separate terminal using the scripts and entry
-points defined in its directory. The development ports configured during
-development are:
+Create and activate Python virtual environments as appropriate, then install the dependencies specified by the project.
 
--   Backend API: `http://localhost:5000`
--   AI service: `http://localhost:8001`
--   Frontend: Vite's configured development port
+Configure and run the AIML pipeline and FastAPI service using their actual entry points and dependency files.
 
-Exact start commands depend on the current project configuration.
+### 6. Development endpoints
 
-## API
+| Service | Development endpoint |
+|---|---|
+| Frontend | Vite-configured local URL |
+| Backend API | `http://localhost:5000` |
+| AI Service | `http://localhost:8001` |
 
-The backend verification workflow has been tested through:
+These are the development endpoints used during project development. Confirm the current ports and startup commands in the configuration before running the application.
 
-``` http
-POST /api/verification/analyze
-```
+---
 
-The endpoint accepts a multipart analysis request. Confirm the current
-route and required form fields in the source code before integrating a
-client, as request fields and claim-forwarding behavior may change
-during development.
+## 🔌 API Overview
 
-## Responsible Use and Limitations
+The backend verification workflow has been tested using:
 
--   A model score is not proof that an image is authentic or
-    AI-generated.
--   OCR may misread text, especially in low-resolution, distorted, or
-    stylized images.
--   A claim marked as supported is only as reliable as the evidence
-    evaluated.
--   Third-party sources are not equivalent to primary or official
-    sources.
--   Users should inspect evidence and seek authoritative sources before
-    consequential decisions.
--   Do not use the system as the sole basis for legal, medical,
-    financial, or safety-critical decisions.
+`POST /api/verification/analyze`
 
-## Hackathon Project
+The request uses a multipart analysis payload. Refer to the current backend route and frontend service implementation for the exact required field names and supported request options.
 
--   **Project:** ProofLens AI
--   **Tagline:** Verify Images. Verify Claims. See the Truth with
-    Evidence.
--   **Team:** AegisAI
--   **Track:** Open Innovation --- AI-Powered Image & Claim Verification
+---
 
-ProofLens AI aims to make digital-content investigation more accessible
-by bringing image signals, extracted text, and claim-focused evidence
-review into one workflow.
+## 🔐 Responsible AI & Limitations
 
-## Current Status
+ProofLens AI is an investigation aid, not an infallible fact-checking system.
 
-This is an active hackathon project. Some analysis components are
-experimental. Service integration, evidence quality, performance, and
-end-to-end flows should be validated in the target deployment before
-relying on results.
+- **Probabilistic detection:** An AI-image detection score does not establish authenticity or prove that an image was generated by AI.
+- **OCR limitations:** Poor image quality, unusual fonts, and distortion can affect extracted text.
+- **Evidence quality:** Claim assessments depend on the quality, relevance, and reliability of available sources.
+- **Source reliability:** Third-party information should not automatically be treated as official confirmation.
+- **Human review:** Users should inspect supporting evidence and consult authoritative sources before drawing consequential conclusions.
 
-## Contributing
+Our goal is to support informed investigation, not replace critical thinking.
 
-1.  Create a branch for your change.
-2.  Keep commits focused and descriptive.
-3.  Never commit `.env` files, credentials, virtual environments,
-    dependency folders, or generated secrets.
-4.  Test the affected service before opening a pull request.
+---
 
-## License
+## 🎯 Hackathon Details
 
-No license has been specified yet. All rights remain with the respective
-copyright holders unless a license is added to this repository.
+<div align="center">
+
+| Detail | Information |
+|---|---|
+| **Project** | ProofLens AI |
+| **Team** | AegisAI |
+| **Track** | Open Innovation |
+| **Focus** | AI-Powered Image & Claim Verification |
+| **Tagline** | Verify Images. Verify Claims. See the Truth with Evidence. |
+
+</div>
+
+---
+
+## 🗺️ Future Scope
+
+Potential improvements include:
+
+- 📚 Stronger source ranking and evidence provenance
+- 🧾 Clearer citations and traceability for claim assessments
+- 🖼️ More robust image-forensics signals
+- ⚡ Faster processing and better performance monitoring
+- 🧪 Broader testing across image types and edge cases
+- 📱 Improved accessibility and responsive design
+
+These are potential enhancements, not claims that the features are already implemented.
+
+---
+
+## 🤝 Contributing
+
+Contributions that improve reliability, usability, transparency, and maintainability are welcome.
+
+1. Create a branch for your change.
+2. Make a focused improvement.
+3. Test the affected functionality.
+4. Submit a pull request with a clear description.
+
+Please keep credentials and generated secrets out of version control.
+
+---
+
+## 📄 License
+
+No license has been specified yet. A license should be added before others are granted explicit permission to reuse, modify, or distribute this project.
+
+---
+
+<div align="center">
+
+### 🔎 ProofLens AI
+
+**Verify Images. Verify Claims. See the Truth with Evidence.**
+
+*Built with purpose by Team AegisAI.*
+
+</div>
