@@ -16,7 +16,7 @@
 
 <br/>
 
-**Built by Team AegisAI**
+**Built by Team ReactDev**
 
 *Open Innovation — AI-Powered Image & Claim Verification*
 
@@ -277,6 +277,58 @@ Configuration may include:
 
 **Security:** Never commit real API keys, database credentials, or `.env` files.
 
+### API Keys & Environment Variables
+
+The following environment-variable names are used by the current project source code. They are names only; never add actual secret values to this README.
+
+| Variable | Purpose | Used by |
+|---|---|---|
+| `GROQ_API_KEY` | Authenticates requests to Groq for AI-assisted analysis | `AIML/groq_analyzer.py`, `AIML/claim_verifier.py` |
+| `TAVILY_API_KEY` | Authenticates Tavily search requests for claim-verification research | `AIML/claim_verifier.py` |
+| `AI_SERVICE_API_KEY` | Shared secret protecting the FastAPI analysis endpoint | `ai-service/app.py` |
+| `MONGODB_URI` | MongoDB connection string; treat it as a secret | `Backend/src/config/db.js` |
+| `GROQ_MODEL` | Optional Groq model selection; current code defaults to `openai/gpt-oss-20b` | `AIML/groq_analyzer.py`, `AIML/claim_verifier.py` |
+| `VITE_API_BASE_URL` | Frontend API base URL; public configuration, not a secret | `Frontend/src/services/verificationService.js` |
+
+#### Example placeholders
+
+Configure only the variables required by each service. These examples use placeholders, not real credentials.
+
+**`AIML/.env`**
+```env
+GROQ_API_KEY=your_groq_api_key
+TAVILY_API_KEY=your_tavily_api_key
+GROQ_MODEL=openai/gpt-oss-20b
+```
+
+**`Backend/.env`**
+```env
+MONGODB_URI=your_mongodb_connection_string
+AI_SERVICE_URL=your_ai_service_url
+AI_SERVICE_API_KEY=your_internal_service_secret
+FRONTEND_URL=your_frontend_url
+```
+
+**`ai-service/.env`**
+```env
+AI_SERVICE_API_KEY=your_internal_service_secret
+```
+
+**`Frontend/.env`**
+```env
+VITE_API_BASE_URL=your_backend_api_url
+```
+
+> Verify every variable name against the relevant service configuration before deployment. In particular, the backend's AI service URL variable must match the name used in its AI-service client. The backend and FastAPI service must use the same internal service secret.
+
+#### Security guidelines
+
+- Never commit actual API keys, database credentials, or `.env` files.
+- Never expose private API keys through frontend variables prefixed with `VITE_`.
+- Keep `.env` files excluded through `.gitignore`.
+- Configure production secrets through the hosting provider's environment settings.
+- If a secret is accidentally published, revoke or rotate it immediately.
+
 ### 3. Install frontend dependencies
 
 ```bash
@@ -315,13 +367,10 @@ These are the development endpoints used during project development. Confirm the
 
 ---
 
-## 🔌 API Overview
+## 🔌 APIs Used
 
-The backend verification workflow has been tested using:
-
-`POST /api/verification/analyze`
-
-The request uses a multipart analysis payload. Refer to the current backend route and frontend service implementation for the exact required field names and supported request options.
+- **Groq API** — AI-assisted image and claim analysis.
+- **Tavily API** — Web search to support claim verification and evidence research.
 
 ---
 
@@ -339,14 +388,20 @@ Our goal is to support informed investigation, not replace critical thinking.
 
 ---
 
-## 🎯 Hackathon Details
+## 🏆 Hackathon Details
 
 <div align="center">
 
+### VORTEX 2K26 – Global AI Innovation Hackathon
+
+**Participation Mode: Online**
+
 | Detail | Information |
 |---|---|
-| **Project** | ProofLens AI |
-| **Team** | ReactDev |
+| **Project Name** | ProofLens AI |
+| **Team Name** | ReactDev |
+| **Team Lead** | Rajat Sahani |
+| **Team Member** | Keerti |
 | **Track** | Open Innovation |
 | **Focus** | AI-Powered Image & Claim Verification |
 | **Tagline** | Verify Images. Verify Claims. See the Truth with Evidence. |
@@ -395,6 +450,6 @@ No license has been specified yet. A license should be added before others are g
 
 **Verify Images. Verify Claims. See the Truth with Evidence.**
 
-*Built with purpose by Team AegisAI.*
+*Built with purpose by Team ReactDev.*
 
 </div>
